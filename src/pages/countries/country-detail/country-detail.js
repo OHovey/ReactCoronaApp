@@ -219,7 +219,7 @@ export default function CountryDetail() {
               </h2>
             </div>
             <div className="col-md-6" style={{ paddingLeft: "12%" }}>
-              <h2 style={{ color: '#b0b0b0', fontWeight: 100 }}>
+              <h2 style={{ color: '#b0b0b0', fontWeight: 100 }} className = "text-center">
                 Total Deaths:{" "}
                   <span
                   style={{

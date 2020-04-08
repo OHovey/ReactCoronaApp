@@ -122,7 +122,7 @@ export default function Countries() {
                                 try {
                                     return (
                                         <tr key = {index} onClick = {(e) => {passCountryToDetailPage(country.node.id)}}>
-                                            <th scope = 'row'>{index + 1}</th> 
+                                            <th clickable = 'true' scope = 'row'>{index + 1}</th> 
                                             <td scope = 'row'>{country.node.name.split('_').join(' ')}</td> 
                                             <td scope = 'row' style = {{ color: '#9e0000' }}>{country.node.totalCases}</td> 
                                             <td scope = 'row'>{country.node.totalDeaths}</td>

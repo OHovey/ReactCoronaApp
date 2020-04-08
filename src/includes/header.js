@@ -24,8 +24,12 @@ export default function DatabaseDetail() {
     let new_date = date_data[2] + '/' + date_data[1] + '/' + date_data[0]
 
     return (
-        <p className = "text-right" style = {{ color: '#945050' }}>
-            last updated on {new_date}
-        </p>
+        <div>
+            <p className = "text-right" style = {{ color: '#945050', display: 'inline-block' }}>
+                last updated on {new_date} - <p style = {{ color: '#945050', display: 'inline-block' }}>
+                <a style = {{ color: '#ff6e6e'}} href = " https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide">Data Source</a>
+              </p>
+            </p>
+        </div>
     )
 }
