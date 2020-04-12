@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { useHistory } from "react-router-dom"
 
 import CountryDetailPage from './country-detail/country-detail'  
+import Footer from '../../includes/footer'
 
 import 'bootstrap/dist/css/bootstrap.min.css' 
 
@@ -84,7 +85,7 @@ export default function Countries() {
 
 
     return (
-        <div className = 'container-fluid' style = {{ backgroundColor: '#bfbfbf' }}>
+        <div className = 'container-fluid' style = {{ backgroundColor: '#bfbfbf', minHeight: 1200, padding: 0 }}>
             <div className = "row bg-dark">
                 <div className = "col-md-3 mx-auto">
                 </div>
@@ -97,7 +98,7 @@ export default function Countries() {
                 <div className = "col-md-3 mx-auto">
                 </div>
             </div>
-            <div className = "container">  
+            <div className = "container" style = {{ minHeight: 1200 }}>  
             <div class="md-form mt-0 input-group" style = {{ padding: 40 }}>
                 <div className = "input-group-prepend">
                     <span className = "input-group-text">Search: </span>
@@ -121,8 +122,8 @@ export default function Countries() {
 
                                 try {
                                     return (
-                                        <tr key = {index} onClick = {(e) => {passCountryToDetailPage(country.node.id)}}>
-                                            <th clickable = 'true' scope = 'row'>{index + 1}</th> 
+                                        <tr style = {{ cursor: 'pointer' }} key = {index} onClick = {(e) => {passCountryToDetailPage(country.node.id)}}>
+                                            <th scope = 'row'>{index + 1}</th> 
                                             <td scope = 'row'>{country.node.name.split('_').join(' ')}</td> 
                                             <td scope = 'row' style = {{ color: '#9e0000' }}>{country.node.totalCases}</td> 
                                             <td scope = 'row'>{country.node.totalDeaths}</td>
@@ -138,6 +139,7 @@ export default function Countries() {
                     </table>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }  

@@ -25,6 +25,8 @@ import {
   Bar,
 } from "recharts";
 
+import Footer from '../../../includes/footer'
+
 const GET_COUNTRY = gql`
   query country($id: ID!) {
     country(id: $id) {
@@ -169,7 +171,7 @@ export default function CountryDetail() {
       }}
     >
       <h3
-        style={{ color: "#ff9191", margin: 0, paddingLeft: 32 }}
+        style={{ color: "#ff9191", margin: 0, paddingLeft: 32, cursor: 'pointer' }}
         className="bg-dark"
         onClick={(e) => {
           history.goBack();
@@ -239,15 +241,12 @@ export default function CountryDetail() {
       <div className="container">
         <h3
           style={{
-            margin: 40,
-            borderBottomStyle: "solid",
-            borderBottomColor: "grey",
-            borderBottomWidth: 1,
+            marginTop: 80,
             color: '#616161',
             fontWeight: 100
           }}
         >
-          Total Cases and Deaths over time - from earliest case
+          <strong>Total Cases and Deaths Over Time - From Earliest Case</strong>
         </h3>
         <br />
         <ResponsiveContainer width="100%" height={400}>
@@ -293,14 +292,11 @@ export default function CountryDetail() {
         <h3
           style={{
             margin: 40,
-            borderBottomStyle: "solid",
-            borderBottomColor: "grey",
-            borderBottomWidth: 1,
             color: '#616161',
             fontWeight: 100
           }}
         >
-          Daily Stats - from earliest case
+          <strong>Daily Changes</strong>
         </h3>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart width={730} height={250} data={accumulated_death_data}>
@@ -317,6 +313,7 @@ export default function CountryDetail() {
 
       {/* <div className='line-chart-wrapper'> */}
       {/* </div> */}
+      <Footer />
     </div>
   );
 }

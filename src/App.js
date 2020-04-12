@@ -6,6 +6,8 @@ import Countries from "./pages/countries/countries";
 import CountryDetail from "./pages/countries/country-detail/country-detail";
 import DatabaseDetail from "./includes/header";
 
+// import Footer from './includes/footer'
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -40,12 +42,12 @@ const App = () => (
       <div className="container-fluid bg-dark">
         <header className="bg-dark align-items-center">
           <div className="row">
-            <div className="col-sm-3"></div>
-            <div className="col-sm-6">
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
               <h1
                 style={{
                   fontWeight: 100,
-                  fontSize: "6.0em",
+                  fontSize: '5.5em',
                   marginLeft: 100,
                   margin: "auto",
                   color: "#a89b9b",
@@ -62,7 +64,7 @@ const App = () => (
               <p className = "text-center" style = {{ color: '#ff9191', fontWeight: 100, marginTop: 10 }}>A Covid-19 Info Site</p>
               {/* <hr style = {{ backgroundColor: '#8f6060' }} />  */}
             </div>
-            <div className="col-sm-3">
+            <div className="col-md-3">
               <DatabaseDetail />
             </div>
           </div>
@@ -74,6 +76,7 @@ const App = () => (
           <Route path="/country/:countryId" exact component={CountryDetail} />
         </Switch>
       </Router>
+      {/* <Footer /> */}
     </div>
   </ApolloProvider>
 );
